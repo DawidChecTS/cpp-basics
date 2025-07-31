@@ -9,7 +9,7 @@ string displayQuestion() // function that displays menu
     cout << "Choose an action from the menu:" << endl;
     cout << "1. Add" << endl;
     cout << "2. Subtract" << endl;
-    cout << "3. Devide" << endl;
+    cout << "3. Divide" << endl;
     cout << "4. Multiply" << endl;
     cout << "5. Exit" << endl;
     cin >> userInput; // puts the answer into the string
@@ -31,7 +31,7 @@ int divide(int a, int b)
 {
     if (b == 0)
     {
-        cout << "Error, you can no devide by 0!";
+        cout << "Error, you can no divide by 0!";
         return 0;
     }
     else {
@@ -46,7 +46,7 @@ int multiply(int a, int b)
 
 
 void displayResult(int a, int b, int product, const string& operation) // Displays the result of a calculation using the given numbers, result, and operation symbol.
-                                                                       // 'operation' is passed as a const string reference for efficiency and safety.
+                                                                       // 'operation' is passed as a const string reference for efficiency and safety..
 {
     cout << "The result of " << a << " " << operation << " " << b << " is: " << product << endl;
 }
@@ -120,7 +120,7 @@ int main()
 
         else if (userInput == "5")
         {
-            cout << "You choose to exit!" << endl;
+            cout << "You chose to exit!" << endl;
             break;
         }
     }
