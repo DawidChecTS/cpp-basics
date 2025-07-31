@@ -22,7 +22,7 @@ int add(int a, int b)
     return a + b;
 }
 
-int substract(int a, int b)
+int subtract(int a, int b)
 {
     return a - b;
 }
@@ -32,7 +32,7 @@ int divide(int a, int b)
     if (b == 0)
     {
         cout << "Error, you can no devide by 0!";
-        return 1;
+        return 0;
     }
     else {
         return a / b;
@@ -45,9 +45,9 @@ int multiply(int a, int b)
 }
 
 
-void displayResult(int a, int b, int product)
+void displayResult(int a, int b, int product, const string& operation)
 {
-    cout << "The result of " << a << " and " << b << " is: " << product << endl;
+    cout << "The result of " << a << "" << operation << "" << b << " is: " << product << endl;
 }
 
 
@@ -67,7 +67,7 @@ int main()
     
         int result = add(userNumberA, userNumberB);
     
-        displayResult(userNumberA, userNumberB, result);
+        displayResult(userNumberA, userNumberB, result, "+");
     }
 
     else if (userInput == "2")
@@ -80,9 +80,9 @@ int main()
         cout << "Give me the second number and I will subtract it from the first one: " << endl;
         cin >> userNumberB;
     
-        int result = substract(userNumberA, userNumberB);
+        int result = subtract(userNumberA, userNumberB);
     
-        displayResult(userNumberA, userNumberB, result);
+        displayResult(userNumberA, userNumberB, result, "-");
     }
 
     else if (userInput == "3")
@@ -97,7 +97,7 @@ int main()
     
         int result = divide(userNumberA, userNumberB);
     
-        displayResult(userNumberA, userNumberB, result);
+        displayResult(userNumberA, userNumberB, result, "/");
     }
 
     else if (userInput == "4")
@@ -112,7 +112,7 @@ int main()
     
         int result = multiply(userNumberA, userNumberB);
     
-        displayResult(userNumberA, userNumberB, result);
+        displayResult(userNumberA, userNumberB, result, "*");
     }
 
     else if (userInput == "5")
