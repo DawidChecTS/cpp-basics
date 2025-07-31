@@ -47,84 +47,82 @@ int multiply(int a, int b)
 
 void displayResult(int a, int b, int product, const string& operation)
 {
-    cout << "The result of " << a << "" << operation << "" << b << " is: " << product << endl;
+    cout << "The result of " << a << " " << operation << " " << b << " is: " << product << endl;
 }
 
 
 int main()
 {
+    while(true)
+    {
         string userInput = displayQuestion(); // capture the returned input
 
-    if (userInput == "1")
-    {
-        int userNumberA, userNumberB;
-    
-        cout << "Give me the first number and I will store it: " << endl;
-        cin >> userNumberA;
-    
-        cout << "Give me the second number and I will add it to the first one: " << endl;
-        cin >> userNumberB;
-    
-        int result = add(userNumberA, userNumberB);
-    
-        displayResult(userNumberA, userNumberB, result, "+");
-    }
+        if (userInput == "1")
+        {
+            int userNumberA, userNumberB;
+        
+            cout << "Give me the first number and I will store it: " << endl;
+            cin >> userNumberA;
+        
+            cout << "Give me the second number and I will add it to the first one: " << endl;
+            cin >> userNumberB;
+        
+            int result = add(userNumberA, userNumberB);
+        
+            displayResult(userNumberA, userNumberB, result, "+");
+        }
 
-    else if (userInput == "2")
-    {
-        int userNumberA, userNumberB;
-    
-        cout << "Give me the first number and I will store it: " << endl;
-        cin >> userNumberA;
-    
-        cout << "Give me the second number and I will subtract it from the first one: " << endl;
-        cin >> userNumberB;
-    
-        int result = subtract(userNumberA, userNumberB);
-    
-        displayResult(userNumberA, userNumberB, result, "-");
-    }
+        else if (userInput == "2")
+        {
+            int userNumberA, userNumberB;
+        
+            cout << "Give me the first number and I will store it: " << endl;
+            cin >> userNumberA;
+        
+            cout << "Give me the second number and I will subtract it from the first one: " << endl;
+            cin >> userNumberB;
+        
+            int result = subtract(userNumberA, userNumberB);
+        
+            displayResult(userNumberA, userNumberB, result, "-");
+        }
 
-    else if (userInput == "3")
-    {
-        int userNumberA, userNumberB;
-    
-        cout << "Enter number to divide: " << endl;
-        cin >> userNumberA;
-    
-        cout << "Enter number to divide: " << endl;
-        cin >> userNumberB;
-    
-        int result = divide(userNumberA, userNumberB);
-    
-        displayResult(userNumberA, userNumberB, result, "/");
-    }
+        else if (userInput == "3")
+        {
+            int userNumberA, userNumberB;
+        
+            cout << "Enter number to divide: " << endl;
+            cin >> userNumberA;
+        
+            cout << "Enter number to divide: " << endl;
+            cin >> userNumberB;
+        
+            int result = divide(userNumberA, userNumberB);
+        
+            displayResult(userNumberA, userNumberB, result, "/");
+        }
 
-    else if (userInput == "4")
-    {
-        int userNumberA, userNumberB;
-    
-        cout << "Give me the first number and I will multiply it: " << endl;
-        cin >> userNumberA;
-    
-        cout << "Give me the second number and I will multiply it with the first one: " << endl;
-        cin >> userNumberB;
-    
-        int result = multiply(userNumberA, userNumberB);
-    
-        displayResult(userNumberA, userNumberB, result, "*");
-    }
+        else if (userInput == "4")
+        {
+            int userNumberA, userNumberB;
+        
+            cout << "Give me the first number and I will multiply it: " << endl;
+            cin >> userNumberA;
+        
+            cout << "Give me the second number and I will multiply it with the first one: " << endl;
+            cin >> userNumberB;
+        
+            int result = multiply(userNumberA, userNumberB);
+        
+            displayResult(userNumberA, userNumberB, result, "*");
+        }
 
-    else if (userInput == "5")
-    {
-        cout << "You choose to exit!" << endl;
-    }
-
-    else
-    {
-        cout << "You chose to not multiply anything, bye!" << endl;
+        else if (userInput == "5")
+        {
+            cout << "You choose to exit!" << endl;
+            break;
+        }
     }
 
     return 0;
-
 }
