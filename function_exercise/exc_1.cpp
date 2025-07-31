@@ -2,9 +2,9 @@
 
 using namespace std;
 
-string displayQuestion()
+string displayQuestion() // function that displays menu
 {
-    string userInput;
+    string userInput; //declaration of userInput string
     cout << "Welcome in the calculator!" << endl;
     cout << "Choose an action from the menu:" << endl;
     cout << "1. Add" << endl;
@@ -12,7 +12,7 @@ string displayQuestion()
     cout << "3. Devide" << endl;
     cout << "4. Multiply" << endl;
     cout << "5. Exit" << endl;
-    cin >> userInput;
+    cin >> userInput; // puts the answer into the string
 
     return userInput;
 }
@@ -45,7 +45,8 @@ int multiply(int a, int b)
 }
 
 
-void displayResult(int a, int b, int product, const string& operation)
+void displayResult(int a, int b, int product, const string& operation) // Displays the result of a calculation using the given numbers, result, and operation symbol.
+                                                                       // 'operation' is passed as a const string reference for efficiency and safety.
 {
     cout << "The result of " << a << " " << operation << " " << b << " is: " << product << endl;
 }
