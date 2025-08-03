@@ -13,6 +13,9 @@ string displayQuestion() // function that displays menu
     cout << "4. Multiply" << endl;
     cout << "5. Exit" << endl;
     cin >> userInput; // puts the answer into the string
+    
+    if (userInput != "1" && userInput != "2" && userInput != "3" && userInput != "4" && userInput != "5")
+    cout << "You need to chose options from 1 - 5!" << endl; // checks if user input is not a number from 1 - 5
 
     return userInput;
 }
