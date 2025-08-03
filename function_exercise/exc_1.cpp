@@ -2,22 +2,43 @@
 
 using namespace std;
 
+bool isUserInputValid(const string& input)
+{
+    if (input == "1" || input == "2" || input == "3" || input == "4" || input == "5")
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
 string displayQuestion() // function that displays menu
 {
-    string userInput; //declaration of userInput string
-    cout << "Welcome in the calculator!" << endl;
-    cout << "Choose an action from the menu:" << endl;
-    cout << "1. Add" << endl;
-    cout << "2. Subtract" << endl;
-    cout << "3. Divide" << endl;
-    cout << "4. Multiply" << endl;
-    cout << "5. Exit" << endl;
-    cin >> userInput; // puts the answer into the string
-    
-    if (userInput != "1" && userInput != "2" && userInput != "3" && userInput != "4" && userInput != "5")
-    cout << "You need to chose options from 1 - 5!" << endl; // checks if user input is not a number from 1 - 5
 
-    return userInput;
+    string userInput; // declaration of userInput string
+    while (true)      // loops until the valid input is typed in
+        {
+        cout << "Welcome in the Calculator App!" << endl;
+        cout << "Choose an option from the menu:" << endl;
+        cout << "" << endl;
+        cout << "1. Add" << endl;
+        cout << "2. Subtract" << endl;
+        cout << "3. Divide" << endl;
+        cout << "4. Multiply" << endl;
+        cout << "5. Exit" << endl;
+        cin >> userInput; // puts the answer into the string
+
+        if (isUserInputValid(userInput))
+            return userInput;
+
+        else 
+        {
+            cout << "Invalid Input! Try again!" << endl;
+            cout << "" << endl;
+        }
+}
 }
 
 double add(double a, double b)
@@ -35,6 +56,7 @@ double divide(double a, double b)
     if (b == 0)
     {
         cout << "Error, you can no divide by 0!";
+        cout << "" << endl;
         return 0;
     }
     else {
@@ -52,6 +74,7 @@ void displayResult(double a, double b, double product, const string& operation) 
                                                                        // 'operation' is passed as a const string reference for efficiency and safety..
 {
     cout << "The result of " << a << " " << operation << " " << b << " is: " << product << endl;
+    cout << "" << endl;
 }
 
 
@@ -124,6 +147,7 @@ int main()
         else if (userInput == "5")
         {
             cout << "You chose to exit!" << endl;
+            cout << "" << endl;
             break;
         }
     }
