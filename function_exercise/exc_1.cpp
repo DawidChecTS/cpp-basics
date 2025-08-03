@@ -20,17 +20,17 @@ string displayQuestion() // function that displays menu
     return userInput;
 }
 
-int add(int a, int b)
+double add(double a, double b)
 {
     return a + b;
 }
 
-int subtract(int a, int b)
+double subtract(double a, double b)
 {
     return a - b;
 }
 
-int divide(int a, int b)
+double divide(double a, double b)
 {
     if (b == 0)
     {
@@ -42,13 +42,13 @@ int divide(int a, int b)
     }
 }
 
-int multiply(int a, int b)
+double multiply(double a, double b)
 {
     return a * b;
 }
 
 
-void displayResult(int a, int b, int product, const string& operation) // Displays the result of a calculation using the given numbers, result, and operation symbol.
+void displayResult(double a, double b, double product, const string& operation) // Displays the result of a calculation using the given numbers, result, and operation symbol.
                                                                        // 'operation' is passed as a const string reference for efficiency and safety..
 {
     cout << "The result of " << a << " " << operation << " " << b << " is: " << product << endl;
@@ -63,7 +63,7 @@ int main()
 
         if (userInput == "1")
         {
-            int userNumberA, userNumberB;
+            double userNumberA, userNumberB;
         
             cout << "Give me the first number and I will store it: " << endl;
             cin >> userNumberA;
@@ -71,14 +71,14 @@ int main()
             cout << "Give me the second number and I will add it to the first one: " << endl;
             cin >> userNumberB;
         
-            int result = add(userNumberA, userNumberB);
+            double result = add(userNumberA, userNumberB);
         
             displayResult(userNumberA, userNumberB, result, "+");
         }
 
         else if (userInput == "2")
         {
-            int userNumberA, userNumberB;
+            double userNumberA, userNumberB;
         
             cout << "Give me the first number and I will store it: " << endl;
             cin >> userNumberA;
@@ -86,14 +86,14 @@ int main()
             cout << "Give me the second number and I will subtract it from the first one: " << endl;
             cin >> userNumberB;
         
-            int result = subtract(userNumberA, userNumberB);
+            double result = subtract(userNumberA, userNumberB);
         
             displayResult(userNumberA, userNumberB, result, "-");
         }
 
         else if (userInput == "3")
         {
-            int userNumberA, userNumberB;
+            double userNumberA, userNumberB;
         
             cout << "Enter number to divide: " << endl;
             cin >> userNumberA;
@@ -101,14 +101,14 @@ int main()
             cout << "Enter number to divide: " << endl;
             cin >> userNumberB;
         
-            int result = divide(userNumberA, userNumberB);
+            double result = divide(userNumberA, userNumberB);
         
             displayResult(userNumberA, userNumberB, result, "/");
         }
 
         else if (userInput == "4")
         {
-            int userNumberA, userNumberB;
+            double userNumberA, userNumberB;
         
             cout << "Give me the first number and I will multiply it: " << endl;
             cin >> userNumberA;
@@ -116,7 +116,7 @@ int main()
             cout << "Give me the second number and I will multiply it with the first one: " << endl;
             cin >> userNumberB;
         
-            int result = multiply(userNumberA, userNumberB);
+            double result = multiply(userNumberA, userNumberB);
         
             displayResult(userNumberA, userNumberB, result, "*");
         }
