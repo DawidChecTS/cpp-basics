@@ -1,10 +1,16 @@
 #include <iostream>
+#include <limits> // for cleaning errors
 
 using namespace std;
 
+
 bool isUserInputValid(const string& input)
 {
-    if (input == "1" || input == "2" || input == "3" || input == "4" || input == "5")
+    if (input == "1" || 
+        input == "2" || 
+        input == "3" ||
+         input == "4" ||
+          input == "5")
     {
         return true;
     }
@@ -38,45 +44,52 @@ string displayQuestion() // function that displays menu
             cout << "Invalid Input! Try again!" << endl;
             cout << "" << endl;
         }
-}
+    }
 }
 
 double add(double a, double b)
-{
-    return a + b;
-}
+    {
+        return a + b;
+    }
 
 double subtract(double a, double b)
-{
-    return a - b;
-}
+    {
+        return a - b;
+    }
 
 double divide(double a, double b)
-{
-    if (b == 0)
     {
-        cout << "Error, you can no divide by 0!";
-        cout << "" << endl;
-        return 0;
+        if (b == 0)
+        {
+            cout << "Error, division by zer is not allowed! \n" << endl;
+            return numeric_limits<double>::quiet_NaN(); // Return a special value of type double that represents NaN - Not a Number
+        }
+        else {
+            return a / b;
+        }
     }
-    else {
-        return a / b;
-    }
-}
 
 double multiply(double a, double b)
-{
-    return a * b;
-}
+    {
+        return a * b;
+    }
 
 
 void displayResult(double a, double b, double product, const string& operation) // Displays the result of a calculation using the given numbers, result, and operation symbol.
                                                                        // 'operation' is passed as a const string reference for efficiency and safety..
-{
-    cout << "The result of " << a << " " << operation << " " << b << " is: " << product << endl;
-    cout << "" << endl;
-}
+    {
+        cout << "The result of " << a << " " << operation << " " << b << " is: " << product << endl;
+        cout << "" << endl;
+    }
 
+void takeInNumbers(double& a, double& b) // the function is printing out questions for numbers and storing them in the variables
+    {
+        cout << "Give me the first number and I will store it: " << endl;
+            cin >> a;
+        
+            cout << "Give me the second number and I will add it to the first one: " << endl;
+            cin >> b;
+    }
 
 int main()
 {
@@ -84,15 +97,11 @@ int main()
     {
         string userInput = displayQuestion(); // capture the returned input
 
+        double userNumberA, userNumberB;
+
         if (userInput == "1")
         {
-            double userNumberA, userNumberB;
-        
-            cout << "Give me the first number and I will store it: " << endl;
-            cin >> userNumberA;
-        
-            cout << "Give me the second number and I will add it to the first one: " << endl;
-            cin >> userNumberB;
+            takeInNumbers(userNumberA, userNumberB); 
         
             double result = add(userNumberA, userNumberB);
         
@@ -101,13 +110,7 @@ int main()
 
         else if (userInput == "2")
         {
-            double userNumberA, userNumberB;
-        
-            cout << "Give me the first number and I will store it: " << endl;
-            cin >> userNumberA;
-        
-            cout << "Give me the second number and I will subtract it from the first one: " << endl;
-            cin >> userNumberB;
+            takeInNumbers(userNumberA, userNumberB); 
         
             double result = subtract(userNumberA, userNumberB);
         
@@ -116,13 +119,7 @@ int main()
 
         else if (userInput == "3")
         {
-            double userNumberA, userNumberB;
-        
-            cout << "Enter number to divide: " << endl;
-            cin >> userNumberA;
-        
-            cout << "Enter number to divide: " << endl;
-            cin >> userNumberB;
+            takeInNumbers(userNumberA, userNumberB); 
         
             double result = divide(userNumberA, userNumberB);
         
@@ -131,13 +128,7 @@ int main()
 
         else if (userInput == "4")
         {
-            double userNumberA, userNumberB;
-        
-            cout << "Give me the first number and I will multiply it: " << endl;
-            cin >> userNumberA;
-        
-            cout << "Give me the second number and I will multiply it with the first one: " << endl;
-            cin >> userNumberB;
+            takeInNumbers(userNumberA, userNumberB); 
         
             double result = multiply(userNumberA, userNumberB);
         
@@ -154,3 +145,20 @@ int main()
 
     return 0;
 }
+
+
+// To do:
+/*✅ 1. Reduce code duplication in main() using a helper function
+You repeat the same input logic four times.
+
+✅ 2. Improve division by zero logic
+Return nothing when dividing by 0 instead of showing a wrong result.
+
+✅ 3. Add more operations
+For example: power (^), square root (√), modulo (%), etc.
+
+✅ 4. Input validation for numbers
+So the user can't crash your program by typing "abc".
+
+✅ 5. Organize code into functions/files
+Make your code cleaner with .cpp and .h files later.*/
