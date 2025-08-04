@@ -4,13 +4,13 @@
 using namespace std;
 
 
-bool isUserInputValid(const string& input)
+bool isUserInputValid(const string& input) // checks if user input is an integer from 1-5
 {
     if (input == "1" || 
         input == "2" || 
         input == "3" ||
-         input == "4" ||
-          input == "5")
+        input == "4" ||
+        input == "5")
     {
         return true;
     }
@@ -82,13 +82,13 @@ void displayResult(double a, double b, double product, const string& operation) 
         cout << "" << endl;
     }
 
-void takeInNumbers(double& a, double& b) // the function is printing out questions for numbers and storing them in the variables
+void takeInNumbers(double& a, double& b) // & is a reference that allows to change values passed into functions
     {
         cout << "Give me the first number and I will store it: " << endl;
-            cin >> a;
+        cin >> a;
         
-            cout << "Give me the second number and I will add it to the first one: " << endl;
-            cin >> b;
+        cout << "Give me the second number and I will add it to the first one: " << endl;
+        cin >> b;
     }
 
 int main()
