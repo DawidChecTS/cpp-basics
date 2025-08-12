@@ -59,13 +59,13 @@ double subtract(double a, double b)
 
 double divide(double a, double b)
     {
-        if (b == 0)
+        if (b != 0)
         {
-            cout << "Error, division by zer is not allowed! \n" << endl;
-            return numeric_limits<double>::quiet_NaN(); // Return a special value of type double that represents NaN - Not a Number
+            return a / b;
         }
         else {
-            return a / b;
+            std::cerr << "Error, you can not devide by 0!" << endl; 
+            return std::numeric_limits<double>::quiet_NaN();
         }
     }
 
@@ -149,7 +149,7 @@ int main()
 
 // To do:
 /*✅ 1. Reduce code duplication in main() using a helper function
-You repeat the same input logic four times.
+You repeat the same input logic four times. - Done
 
 ✅ 2. Improve division by zero logic
 Return nothing when dividing by 0 instead of showing a wrong result.
