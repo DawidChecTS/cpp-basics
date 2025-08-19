@@ -36,14 +36,23 @@ void menu()
     cout << " 3 - to MULTIPLICATE two numbers" << endl;
     cout << " 4 - to DEVIDE two numbers" << endl;
 }
+// taking in user input and storing the integer + printinig it
+int userChoice()
+{   
+    int userInput; 
+
+    cin >> userInput;
+    cout << "User choose: " << userInput << endl; 
+
+    return userInput; 
+}
 
 // main, .exe function
 int main()
 {
     greeting();
     menu();
-
-
+    userChoice();
     
     return 0;
 }
